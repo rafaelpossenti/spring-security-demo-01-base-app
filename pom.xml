@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.luv2code</groupId>
+	<groupId>com.possenti</groupId>
 	<artifactId>spring-security-demo</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
@@ -10,7 +10,8 @@
 	<name>spring-security-demo</name>
 
 	<properties>
-		<springframework.version>5.0.2.RELEASE</springframework.version>
+		<springframework.version>5.0.5.RELEASE</springframework.version>
+		<springsecurity.version>5.0.4.RELEASE</springsecurity.version>
 
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -23,6 +24,21 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${springframework.version}</version>
+		</dependency>
+		
+
+		<!-- Spring Security Web -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${springsecurity.version}</version>
+		</dependency>
+
+		<!-- Spring Security Config -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${springsecurity.version}</version>
 		</dependency>
 
 		<!-- Servlet, JSP and JSTL support -->
@@ -54,18 +70,18 @@
 	</dependencies>
 
 	<!-- TO DO: Add support for Maven WAR Plugin -->
-	<build> 
+	<build>
 		<finalName>spring-security-demo</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
 					<!-- Add maven coordinates for maven-war-plugin -->
 					<groupId>org.apache.maven.plugins</groupId>
-    				<artifactId>maven-war-plugin</artifactId>
-    				<version>3.2.0</version>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>3.2.0</version>
 				</plugin>
 			</plugins>
-		</pluginManagement>	
+		</pluginManagement>
 	</build>
 
 </project>
