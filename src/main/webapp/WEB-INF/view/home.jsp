@@ -11,6 +11,8 @@
 	<h2>Company Home page </h2>
 	Welcome to Company Home Page
 	
+	<hr>
+	
 	<!-- display user name and role -->
 	<p>
 		User: <security:authentication property="principal.username"/>
@@ -18,6 +20,15 @@
 		Role(s): <security:authentication property="principal.authorities"/>
 	</p>
 	
+	<hr>
+	<p>
+		<a href="${pageContext.request.contextPath}/leaders">LeaderShip Meeting</a> (Only for Manager peeps)
+	</p>
+	<p>
+		<a href="${pageContext.request.contextPath}/systems">IT Systems Meeting</a> (Only for Admin peeps)
+	</p>
+	
+	<hr>
 	
 	<form:form action="${pageContext.request.contextPath}/logout"
 			   method="POST">
